@@ -1,6 +1,6 @@
 === Ban Hammer ===
 Contributors: ipstenu
-Donate link: https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=BarlPvkfzQ-nAEgcKy65Jj7qMmPuyzlWNf9Sj-q0FfxaoaeZYqn77uxXXM0&dispatch=5885d80a13c0db1f998ca054efbdf2c25fe4a05bcb33bff6aad6e850552f81af
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973
 Tags: access, admin, authentication, email, ban, mail, mailinator, register, registration, user, users
 Requires at least: 2.5
 Tested up to: 2.7.1
