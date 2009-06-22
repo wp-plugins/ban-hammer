@@ -3,7 +3,7 @@ Contributors: ipstenu
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973
 Tags: access, admin, authentication, email, ban, mail, mailinator, register, registration, user, users
 Requires at least: 2.5
-Tested up to: 2.7.1
+Tested up to: 2.8
 Stable tag: 1.0
 
 Prevent people from registering with any email that is listed under your comment moderation blacklist.
@@ -18,13 +18,20 @@ Instead of using its own database table, Ban Hammer pulls from your list of blac
 
 In addition, Ban Hammer has built in support for StopForumSpam.com which can be turned on or off as desired.
 
-= Version 1.0 =
+==Changelog==
 
+Ban Hammer is a very weird fork of Philippe Paquet's No Disposable Email plugin (http://www.joeswebtools.com/wordpress-plugins/no-disposable-email/). The original plugin was a straight forward .dat file that listed all the bad emails (generally ones like mailinator that are disposable) and while Ban Hammer doesn't do that, this would not have been possible without that which was done before.
+
+Also credits to WP-Deadbolt, for making me think about SQL and TTC for StopForumSpam integration.
+
+MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
+
+=  1.0 =
 **03 May, 2009**
 
 * First released version.
 
-= Version 0.3 =
+=  0.3 =
 **30 March, 2009**
 
 * The error message is customizable.
@@ -32,22 +39,15 @@ In addition, Ban Hammer has built in support for StopForumSpam.com which can be 
 * Added in checkbox to use StopForumSpam (default to NO).
 * Cleans up after itself on deactivation (deletes the banhammer_* values from the wp_options table becuase I HATE when plugins leave themselves).
 
-= Version 0.2 =
+=  0.2 =
 **29 March, 2009**
 
 * Shifted to use the WordPress comment blacklist as source. This was pretty much an 80% re-write from NDE's basis, keeping only the basic check at registration code.
 
-= Version 0.1 =
+=  0.1 =
 **28 March, 2009**
 
 * First release using No Disposable Email's .dat file as a source.
-
-= History =
-Ban Hammer is a very weird fork of Philippe Paquet's No Disposable Email plugin (http://www.joeswebtools.com/wordpress-plugins/no-disposable-email/). The original plugin was a straight forward .dat file that listed all the bad emails (generally ones like mailinator that are disposable) and while Ban Hammer doesn't do that, this would not have been possible without that which was done before.
-
-Also credits to WP-Deadbolt, for making me think about SQL and TTC for StopForumSpam integration.
-
-MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
 
 == Installation ==
 
