@@ -3,7 +3,7 @@ Contributors: ipstenu
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973
 Tags: access, admin, authentication, email, ban, mail, mailinator, register, registration, user, users
 Requires at least: 2.5
-Tested up to: 2.8
+Tested up to: 2.8.1
 Stable tag: 1.0
 
 Prevent people from registering with any email that is listed under your comment moderation blacklist.
@@ -78,3 +78,6 @@ At a guess, you don't have [http://us.php.net/curl cURL] support. You may need t
 = Will you add other spam lists? =
 
 Sure. Or at least I'll try.  I'm not a genius so I may need help with APIs and the right PHP calls.
+
+= Does this work on WPMU? =
+Yes, yes it does!
