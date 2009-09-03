@@ -3,7 +3,7 @@ Contributors: ipstenu
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973
 Tags: access, admin, authentication, email, ban, mail, mailinator, register, registration, user, users
 Requires at least: 2.5
-Tested up to: 2.8.1
+Tested up to: 2.8.4
 Stable tag: 1.0
 
 Prevent people from registering with any email that is listed under your comment moderation blacklist.
@@ -37,7 +37,7 @@ MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
 * The error message is customizable.
 * Added support for StopForumSpam.com
 * Added in checkbox to use StopForumSpam (default to NO).
-* Cleans up after itself on deactivation (deletes the banhammer_* values from the wp_options table becuase I HATE when plugins leave themselves).
+* Cleans up after itself on deactivation (deletes the banhammer_foo values from the wp_options table becuase I HATE when plugins leave themselves).
 
 =  0.2 =
 **29 March, 2009**
