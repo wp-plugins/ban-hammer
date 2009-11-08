@@ -99,9 +99,15 @@ function banhammer_optionsmenu() {
           add_submenu_page('tools.php', 'Ban Hammer', 'Ban Hammer', '8', 'ban-hammer/ban-hammer_options.php');
         }
 }
+function banhammer_usersmenu() {
+        if (function_exists('add_submenu_page')) {
+          add_submenu_page('tools.php', 'Ban Hammer Users', 'Ban Hammer Users', '8', 'ban-hammer/ban-hammer_users.php');
+        }
+}
 
 // Hooks
 add_action('admin_menu', 'banhammer_optionsmenu');
+add_action('admin_menu', 'banhammer_usersmenu');
 add_action('register_post', 'banhammer', 10, 3);
 
 register_activation_hook( __FILE__, 'banhammer_activate' );
