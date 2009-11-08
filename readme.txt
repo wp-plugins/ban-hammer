@@ -3,7 +3,7 @@ Contributors: ipstenu
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973
 Tags: access, admin, authentication, email, ban, mail, mailinator, register, registration, user, users
 Requires at least: 2.5
-Tested up to: 2.8.4
+Tested up to: 2.8.5
 Stable tag: 1.0
 
 Prevent people from registering with any email that is listed under your comment moderation blacklist.
@@ -25,6 +25,11 @@ Ban Hammer is a very weird fork of Philippe Paquet's No Disposable Email plugin 
 Also credits to WP-Deadbolt, for making me think about SQL and TTC for StopForumSpam integration.
 
 MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
+
+= 1.1 =
+**In Progress**
+
+* This is the version in dev, and is going to, hopefully, list all users marked by StopForumSpam as spammers, if you're using that option (and not if not).  Use at your own peril.
 
 =  1.0 =
 **03 May, 2009**
