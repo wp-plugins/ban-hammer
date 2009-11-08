@@ -56,9 +56,20 @@ global $wpdb;
 
 <fieldset class="options">
 <legend><h3>Use StopForumSpam.com?</h3></legend>
-
 <p> <input type="checkbox" id="banhammer_newsfs" name="banhammer_newsfs" value="1" <?php echo $banhammer_sfs ?> /> <a href="http://www.stopforumspam.com/">StopForumSpam.com</a> is a repository for forum spambots.  Since a disturbingly high number of them also sign up on blogs, some people may want to block them here as well.  If you do, check the box. If not, leave it alone (which is the default).</p>
 </fieldset>
+
+<?php
+if (get_option('banhammer_stopforumspam') != '0' )
+        {
+?>
+
+<p>For a list of all users who should have been blocked by StopForumSpam, see <a href="tools.php?page=ban-hammer/ban-hammer_users.php">Ban Hammer - Users</a>.  Depending on how many users you have registered, this may take a long time to run.</p>
+
+<?php
+        }
+
+?>
 
 <fieldset class="options">
 <legend><h3>Blacklisted Domains</h3></legend>
