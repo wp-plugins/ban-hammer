@@ -56,9 +56,43 @@ global $wpdb;
 
 <fieldset class="options">
 <legend><h3>Use StopForumSpam.com?</h3></legend>
-
 <p> <input type="checkbox" id="banhammer_newsfs" name="banhammer_newsfs" value="1" <?php echo $banhammer_sfs ?> /> <a href="http://www.stopforumspam.com/">StopForumSpam.com</a> is a repository for forum spambots.  Since a disturbingly high number of them also sign up on blogs, some people may want to block them here as well.  If you do, check the box. If not, leave it alone (which is the default).</p>
 </fieldset>
+
+<?php
+if (get_option('banhammer_stopforumspam') != '0' )
+        {
+
+$szSort = "user_nicename";
+$aUsersID = $wpdb->get_col( $wpdb->prepare("SELECT $wpdb->users.ID FROM $wpdb->users ORDER BY %s ASC", $szSort ));
+
+foreach ( $aUsersID as $iUserID ) :
+                $user = get_userdata( $iUserID );
+                $email = $user->user_email;
+                $username = $user->display_name;
+                
+                //Initialize the Curl session
+                $ch = curl_init();
+                $StopForumSpam = "http://www.stopforumspam.com/api?email=$user_email";
+                //Set curl to return the data instead of printing it to the browser.
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                //Set the URL
+                curl_setopt($ch, CURLOPT_URL, $StopForumSpam);
+                //Execute the fetch
+                $check = curl_exec($ch);
+                //Close the connection
+                curl_close($ch);
+
+                $test = "yes";
+                if ( strpos( $check, $test) > 0 )
+                {
+                        echo '<li>' . $username . '</li>';
+                }
+
+endforeach; 
+        }
+
+?>
 
 <fieldset class="options">
 <legend><h3>Blacklisted Domains</h3></legend>
