@@ -26,10 +26,15 @@ Also credits to WP-Deadbolt, for making me think about SQL and TTC for StopForum
 
 MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
 
-= 1.1 =
-**In Progress**
+= 1.2 =
+** 08 November, 2009 **
 
-* This is the version in dev, and is going to, hopefully, list all users marked by StopForumSpam as spammers, if you're using that option (and not if not).  Use at your own peril.
+* This lists all users marked by StopForumSpam as spammers, if you're using that option (and not if not).
+
+= 1.1 =
+** Error **
+
+* Subversion before coffee = BAD.
 
 =  1.0 =
 **03 May, 2009**
