@@ -3,7 +3,7 @@
 Plugin Name: Ban Hammer
 Plugin URI: http://code.google.com/p/ipstenu/
 Description: This plugin prevent people from registering with any email you list.
-Version: 1.0
+Version: 1.2
 Author: Mika Epstein
 Author URI: http://www.ipstenu.org/
 
