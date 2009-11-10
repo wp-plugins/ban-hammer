@@ -27,12 +27,12 @@ Also credits to WP-Deadbolt, for making me think about SQL and TTC for StopForum
 MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
 
 = 1.2 =
-** 08 November, 2009 **
+**08 November, 2009**
 
-* This lists all users marked by StopForumSpam as spammers, if you're using that option (and not if not).
+* This lists all users marked by StopForumSpam as spammers, if you're using that option (and not if not). (Thanks to obruchez for the suggestion!).
 
 = 1.1 =
-** Error **
+**Error**
 
 * Subversion before coffee = BAD.
 
@@ -59,6 +59,12 @@ MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
 
 * First release using No Disposable Email's .dat file as a source.
 
+= To Do =
+
+* Check if any banned users managed to register and flag them.
+* Put in a delete link from the BanHammer users list.
+* HIDE the Users List from menus.
+
 == Installation ==
 
 1. Unpack the zip file and extract the `/ban-hammer/` folder and the files.
@@ -70,6 +76,8 @@ MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
 
 1. Default Error message
 2. Admin screen
+3. Ban Hammer Users
+4. Admin Menu.
 
 == Frequently Asked Questions ==
 
@@ -83,7 +91,7 @@ No.  Since WordPress doesn't list rejected comments (your blacklist goes to a bl
 
 = It breaks when I turn on StopForumSpam checking. Why? =
 
-At a guess, you don't have [http://us.php.net/curl cURL] support. You may need to check with your webhost about that. If they do have cURL setup, share the error with me and I'll try to debug!
+At a guess, you don't have cURL support (see http://us.php.net/curl ). You may need to check with your webhost about that. If they do have cURL setup, share the error with me and I'll try to debug!
 
 = Will you add other spam lists? =
 
