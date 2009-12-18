@@ -3,7 +3,7 @@ Contributors: ipstenu
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973
 Tags: access, admin, authentication, email, ban, mail, mailinator, register, registration, user, users
 Requires at least: 2.5
-Tested up to: 2.8.5
+Tested up to: 2.9
 Stable tag: 1.2
 
 Prevent people from registering with any email that is listed under your comment moderation blacklist.
