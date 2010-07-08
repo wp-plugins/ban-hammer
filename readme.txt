@@ -1,9 +1,9 @@
 === Ban Hammer ===
 Contributors: ipstenu
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973
-Tags: access, admin, authentication, email, ban, mail, mailinator, register, registration, user, users
+Tags: access, admin, authentication, email, ban, mail, register, registration, user, users
 Requires at least: 2.5
-Tested up to: 2.9
+Tested up to: 3.0
 Stable tag: 1.2
 
 Prevent people from registering with any email that is listed under your comment moderation blacklist.
@@ -97,5 +97,10 @@ At a guess, you don't have cURL support (see http://us.php.net/curl ). You may n
 
 Sure. Or at least I'll try.  I'm not a genius so I may need help with APIs and the right PHP calls.
 
-= Does this work on WPMU? =
-Yes, yes it does!
+= Does this work on MultiSite? =
+
+No, it does not. MultiSite uses a totally different signup method.  Also, it has a built in way to restrict registration, so I have no interest in reinventing that wheel.
+
+= Why doesn't this work AT ALL on my site!? =
+
+I'm not sure. I've gotten a handful of reports from people where it's not working, and for the life of me, I'm stumped. So far, it looks like Zend and/or eAccelerator aren't agreeing with this. If it's failing, please post on the wp.org forums with your server specs (PHP info, server type, etc) and any plugins you're running.
