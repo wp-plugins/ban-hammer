@@ -3,7 +3,7 @@
 Plugin Name: Ban Hammer
 Plugin URI: http://code.google.com/p/ipstenu/
 Description: This plugin prevent people from registering with any email you list.
-Version: 1.2
+Version: 1.3
 Author: Mika Epstein
 Author URI: http://www.ipstenu.org/
 
@@ -77,61 +77,6 @@ function banhammer($user_login, $user_email, $errors) {
         }
 }
 
-// BanHammer MU
-function banhammermu($user_login, $user_email, $errors) {
-        // Pre-2.6 compatibility
-        if(!defined('WP_PLUGIN_URL'))
-        {
-                if(!defined('WP_CONTENT_URL'))
-                { define('WP_CONTENT_URL', get_option('siteurl') . '/wp-content'); }
-                define('WP_PLUGIN_URL', WP_CONTENT_URL . '/plugins');
-        }
-        if(!defined('WP_PLUGIN_DIR'))
-        {
-                if(!defined('WP_CONTENT_DIR'))
-                { define('WP_CONTENT_DIR', ABSPATH . 'wp-content'); }
-                define('WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins');
-        }
-
-        // First we check the users against StopForumSpam but ONLY if they checked the box
-        if (get_option('banhammer_stopforumspam') != '0' )
-        {
-                //Initialize the Curl session
-                $ch = curl_init();
-                $StopForumSpam = "http://www.stopforumspam.com/api?email=$user_email";
-                //Set curl to return the data instead of printing it to the browser.
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                //Set the URL
-                curl_setopt($ch, CURLOPT_URL, $StopForumSpam);
-                //Execute the fetch
-                $check = curl_exec($ch);
-                //Close the connection
-                curl_close($ch);
-
-                $test = "yes";
-                if ( strpos( $check, $test) > 0 )
-                {
-                        $errors->add('invalid_email', __( get_option('banhammer_message') ));
-                        return;
-                }
-        }
-
-        // Get blacklist
-        $blacklist_string = get_option('blacklist_keys');
-        $blacklist_array = explode("\n", $blacklist_string);
-        $blacklist_size = sizeof($blacklist_array);
-
-        // Go through blacklist
-        for($i = 0; $i < $blacklist_size; $i++)
-        {
-                $blacklist_current = trim($blacklist_array[$i]);
-                if(stripos($user_email, $blacklist_current) !== false)
-                {
-                        $errors->add('invalid_email', __( get_option('banhammer_message') ));
-                        return;
-                }
-        }
-}
 
 // Create the options for the message and spam assassin and set some defaults.
 function banhammer_activate() {
@@ -161,7 +106,6 @@ function banhammer_usersmenu() {
 add_action('admin_menu', 'banhammer_optionsmenu');
 add_action('admin_menu', 'banhammer_usersmenu');
 add_action('register_post', 'banhammer', 10, 3);
-add_filter('wpmu_validate_user_signup', 'banhammermu');
 
 register_activation_hook( __FILE__, 'banhammer_activate' );
 register_deactivation_hook( __FILE__, 'banhammer_deactivate' );

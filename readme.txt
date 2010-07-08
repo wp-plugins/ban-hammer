@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: access, admin, authentication, email, ban, mail, register, registration, user, users
 Requires at least: 2.5
 Tested up to: 3.0
-Stable tag: 1.2
+Stable tag: 1.3
 
 Prevent people from registering with any email that is listed under your comment moderation blacklist.
 
@@ -25,6 +25,11 @@ Ban Hammer is a very weird fork of Philippe Paquet's No Disposable Email plugin 
 Also credits to WP-Deadbolt, for making me think about SQL and TTC for StopForumSpam integration.
 
 MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
+
+= 1.3 =
+** 08 July, 2010 **
+
+* Pulling out the WPMU stuff that's never going to happen now that it's MultiSite and doesn't work.
 
 = 1.2 =
 **08 November, 2009**
