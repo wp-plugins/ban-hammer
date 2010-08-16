@@ -5,6 +5,16 @@
 <?php
 global $wpdb;
 
+// Checks for presence of the cURL extension.
+function _iscurlinstalled() {
+	if  (in_array  ('curl', get_loaded_extensions())) {
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
         if (isset($_POST['update']))
         {
         // Update the Blacklist
@@ -54,20 +64,16 @@ global $wpdb;
 <textarea name='banhammer_newmess' cols='80' rows='2'><?php echo get_option('banhammer_message'); ?></textarea>
 </fieldset>
 
-// ### Checks for presence of the cURL extension.
-<?php function _iscurlinstalled() {
-	if  (in_array  ('curl', get_loaded_extensions())) { ?>
 
+<?php if (_iscurlinstalled()) { ?>
 <fieldset class="options">
 <legend><h3>Use StopForumSpam.com?</h3></legend>
 <p> <input type="checkbox" id="banhammer_newsfs" name="banhammer_newsfs" value="1" <?php echo $banhammer_sfs ?> /> <a href="http://www.stopforumspam.com/">StopForumSpam.com</a> is a repository for forum spambots.  Since a disturbingly high number of them also sign up on blogs, some people may want to block them here as well.  If you do, check the box. If not, leave it alone (which is the default).</p>
 </fieldset>
-
 <?php 	}
-	else{ ?>
+	else { ?>
 		<p>It does not appear that you have cURL installed on your server.  The StopForumSpam checker will not run without it, and as such, you cannot use it.  Sorry about that. Ask your webhost about getting cURL installed.</p>
-<?php	}
-} ?>
+<?php } ?>
 
 <?php
 if (get_option('banhammer_stopforumspam') != '0' )
