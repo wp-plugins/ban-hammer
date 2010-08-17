@@ -3,11 +3,11 @@
 Plugin Name: Ban Hammer
 Plugin URI: http://code.google.com/p/ipstenu/
 Description: This plugin prevent people from registering with any email you list.
-Version: 1.2
+Version: 1.4
 Author: Mika Epstein
 Author URI: http://www.ipstenu.org/
 
-Copyright 2009 Mika Epstein (email: ipstenu@ipstenu.org)
+Copyright 2009-10 Mika Epstein (email: ipstenu@ipstenu.org)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -18,10 +18,6 @@ Copyright 2009 Mika Epstein (email: ipstenu@ipstenu.org)
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 */
 
@@ -80,6 +76,7 @@ function banhammer($user_login, $user_email, $errors) {
                 }
         }
 }
+
 
 // Create the options for the message and spam assassin and set some defaults.
 function banhammer_activate() {
