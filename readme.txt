@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: access, admin, authentication, email, ban, mail, register, registration, user, users
 Requires at least: 2.5
 Tested up to: 3.0.1
-Stable tag: 1.3
+Stable tag: 1.4
 
 Prevent people from registering with any email that is listed under your comment moderation blacklist.
 
@@ -29,7 +29,7 @@ MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
 = 1.4 = 
 ** 16 August, 2010 **
 
-* Checks for presence of the cURL extension. If not found, no cURL. (using http://cleverwp.com/function-curl-php-extension-loaded/ as recommended by kmaisch )
+* Checks for presence of the cURL extension. If not found, the option to use StopForumSpam is removed. (using http://cleverwp.com/function-curl-php-extension-loaded/ as recommended by kmaisch )
 
 = 1.3 =
 ** 08 July, 2010 **
