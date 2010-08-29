@@ -1,5 +1,5 @@
 === Ban Hammer ===
-Contributors: ipstenu
+Contributors: Ipstenu
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973
 Tags: access, admin, authentication, email, ban, mail, register, registration, user, users
 Requires at least: 2.5
