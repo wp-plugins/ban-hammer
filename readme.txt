@@ -1,7 +1,6 @@
 === Ban Hammer ===
 Contributors: Ipstenu
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973
-Tags: access, admin, authentication, email, ban, mail, register, registration, user, users
+Tags: email, ban,registration
 Requires at least: 2.5
 Tested up to: 3.0.1
 Stable tag: 1.4
@@ -18,54 +17,49 @@ Instead of using its own database table, Ban Hammer pulls from your list of blac
 
 In addition, Ban Hammer has built in support for StopForumSpam.com which can be turned on or off as desired.
 
+* [Donate](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973)
+* [Plugin Site](http://code.ipstenu.org/ban-hammer/)
+
 ==Changelog==
 
-Ban Hammer is a very weird fork of Philippe Paquet's No Disposable Email plugin (http://www.joeswebtools.com/wordpress-plugins/no-disposable-email/). The original plugin was a straight forward .dat file that listed all the bad emails (generally ones like mailinator that are disposable) and while Ban Hammer doesn't do that, this would not have been possible without that which was done before.
+Ban Hammer is a very weird fork of [Philippe Paquet's No Disposable Email plugin](http://www.joeswebtools.com/wordpress-plugins/no-disposable-email/). The original plugin was a straight forward .dat file that listed all the bad emails (generally ones like mailinator that are disposable) and while Ban Hammer doesn't do that, this would not have been possible without that which was done before.
 
 Also credits to WP-Deadbolt, for making me think about SQL and TTC for StopForumSpam integration.
 
 MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
 
-= 1.4 = 
-** 16 August, 2010 **
+= 1.4 - 16 August, 2010 =
 
 * Checks for presence of the cURL extension. If not found, the option to use StopForumSpam is removed. (using http://cleverwp.com/function-curl-php-extension-loaded/ as recommended by kmaisch )
 
-= 1.3 =
-** 08 July, 2010 **
+= 1.3 - 08 July, 2010 =
 
 * Pulling out the WPMU stuff that's never going to happen now that it's MultiSite and doesn't work.
 
-= 1.2 =
-**08 November, 2009**
+= 1.2 - 08 November, 2009 =
 
 * This lists all users marked by StopForumSpam as spammers, if you're using that option (and not if not). (Thanks to obruchez for the suggestion!).
 
-= 1.1 =
-**Error**
+= 1.1 - 03 May, 2009 =
 
 * Subversion before coffee = BAD.
 
-=  1.0 =
-**03 May, 2009**
+=  1.0 - 03 May, 2009 =
 
 * First released version.
 
-=  0.3 =
-**30 March, 2009**
+=  0.3 - 30 March, 2009 =
 
 * The error message is customizable.
 * Added support for StopForumSpam.com
 * Added in checkbox to use StopForumSpam (default to NO).
-* Cleans up after itself on deactivation (deletes the banhammer_foo values from the wp_options table becuase I HATE when plugins leave themselves).
+* Cleans up after itself on deactivation (deletes the banhammer_foo values from the wp_options table because I HATE when plugins leave themselves).
 
-=  0.2 =
-**29 March, 2009**
+=  0.2 - 29 March, 2009 =
 
 * Shifted to use the WordPress comment blacklist as source. This was pretty much an 80% re-write from NDE's basis, keeping only the basic check at registration code.
 
-=  0.1 =
-**28 March, 2009**
+=  0.1 - 28 March, 2009 =
 
 * First release using No Disposable Email's .dat file as a source.
 
@@ -101,7 +95,7 @@ No.  Since WordPress doesn't list rejected comments (your blacklist goes to a bl
 
 = It breaks when I turn on StopForumSpam checking. Why? =
 
-At a guess, you don't have cURL support (see http://us.php.net/curl ). You may need to check with your webhost about that. If they do have cURL setup, share the error with me and I'll try to debug!
+At a guess, you don't have [cURL support](http://us.php.net/curl). You may need to check with your webhost about that. If they do have cURL setup, share the error with me and I'll try to debug!
 
 = Will you add other spam lists? =
 
@@ -109,7 +103,7 @@ Sure. Or at least I'll try.  I'm not a genius so I may need help with APIs and t
 
 = Does this work on MultiSite? =
 
-No, it does not. MultiSite uses a totally different signup method.  Also, it has a built in way to restrict registration, so I have no interest in reinventing that wheel.
+No, it does not. MultiSite uses a totally different signup method.  Also, MultiSite has a built in way to restrict registration, so I have no interest in reinventing that wheel.
 
 = Why doesn't this work AT ALL on my site!? =
 
