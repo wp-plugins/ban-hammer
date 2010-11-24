@@ -2,7 +2,7 @@
 Contributors: Ipstenu
 Tags: email, ban,registration
 Requires at least: 2.5
-Tested up to: 3.0.1
+Tested up to: 3.1
 Stable tag: 1.4
 
 Prevent people from registering with any email that is listed under your comment moderation blacklist.
