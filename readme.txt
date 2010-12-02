@@ -4,6 +4,7 @@ Tags: email, ban,registration
 Requires at least: 2.5
 Tested up to: 3.1
 Stable tag: 1.4
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973
 
 Prevent people from registering with any email that is listed under your comment moderation blacklist.
 
