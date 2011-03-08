@@ -1,7 +1,7 @@
 === Ban Hammer ===
 Contributors: Ipstenu
-Tags: email, ban,registration
-Requires at least: 2.5
+Tags: email, ban, registration, buddypress
+Requires at least: 3.0
 Tested up to: 3.1
 Stable tag: 1.4
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973
@@ -23,52 +23,63 @@ In addition, Ban Hammer has built in support for StopForumSpam.com which can be 
 
 ==Changelog==
 
-Ban Hammer is a very weird fork of [Philippe Paquet's No Disposable Email plugin](http://www.joeswebtools.com/wordpress-plugins/no-disposable-email/). The original plugin was a straight forward .dat file that listed all the bad emails (generally ones like mailinator that are disposable) and while Ban Hammer doesn't do that, this would not have been possible without that which was done before.
+**Ban Hammer now only supports WordPress 3.0 and up.**
 
-Also credits to WP-Deadbolt, for making me think about SQL and TTC for StopForumSpam integration.
+= 1.5 =
+*08 March, 2011*
 
-MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
+* Allows for deletion of spammers from the User List (credit mario_7)
+* Added optional functionality to show spammer status on the normal users list.
+* Moved Ban Hammer Users to the USERS menu (now called 'Ban Hammered')
+* Works on BuddyPress!
 
-= 1.4 - 16 August, 2010 =
+= 1.4 =
+*16 August, 2010*
 
 * Checks for presence of the cURL extension. If not found, the option to use StopForumSpam is removed. (using http://cleverwp.com/function-curl-php-extension-loaded/ as recommended by kmaisch )
 
-= 1.3 - 08 July, 2010 =
+= 1.3 =
+*08 July, 2010*
 
 * Pulling out the WPMU stuff that's never going to happen now that it's MultiSite and doesn't work.
 
-= 1.2 - 08 November, 2009 =
+= 1.2 =
+*08 November, 2009*
 
 * This lists all users marked by StopForumSpam as spammers, if you're using that option (and not if not). (Thanks to obruchez for the suggestion!).
 
-= 1.1 - 03 May, 2009 =
+= 1.1 =
+*03 May, 2009*
 
 * Subversion before coffee = BAD.
 
-=  1.0 - 03 May, 2009 =
+=  1.0 =
+*03 May, 2009*
 
-* First released version.
+* First public version.
 
-=  0.3 - 30 March, 2009 =
+=  0.3 =
+*30 March, 2009*
 
 * The error message is customizable.
 * Added support for StopForumSpam.com
 * Added in checkbox to use StopForumSpam (default to NO).
 * Cleans up after itself on deactivation (deletes the banhammer_foo values from the wp_options table because I HATE when plugins leave themselves).
 
-=  0.2 - 29 March, 2009 =
+=  0.2 =
+*29 March, 2009*
 
 * Shifted to use the WordPress comment blacklist as source. This was pretty much an 80% re-write from NDE's basis, keeping only the basic check at registration code.
 
-=  0.1 - 28 March, 2009 =
+=  0.1 =
+*28 March, 2009*
 
 * First release using No Disposable Email's .dat file as a source.
 
 = To Do =
 
-* Check if any banned users managed to register and flag them.
-* Put in a delete link from the BanHammer users list.
-* HIDE the Users List from menus.
+* Make the user columns sortable
+* Spread out the scan of IDs into chunks so the Ban Hammer user page takes less time to load.
 
 == Installation ==
 
@@ -82,7 +93,8 @@ MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
 1. Default Error message
 2. Admin screen
 3. Ban Hammer Users
-4. Admin Menu.
+4. Users Menu, with Spammer Flag on
+5. BuddyPress Error message
 
 == Frequently Asked Questions ==
 
@@ -104,8 +116,20 @@ Sure. Or at least I'll try.  I'm not a genius so I may need help with APIs and t
 
 = Does this work on MultiSite? =
 
-No, it does not. MultiSite uses a totally different signup method.  Also, MultiSite has a built in way to restrict registration, so I have no interest in reinventing that wheel.
+No, and it's not supported.  It won't even run. No, I have no plans to MultiSite this.
+
+= Does this work on BuddyPress? =
+
+Yes, yes it does.
 
 = Why doesn't this work AT ALL on my site!? =
 
 I'm not sure. I've gotten a handful of reports from people where it's not working, and for the life of me, I'm stumped. So far, it looks like Zend and/or eAccelerator aren't agreeing with this. If it's failing, please post on the wp.org forums with your server specs (PHP info, server type, etc) and any plugins you're running.
+
+== Credits ==
+Ban Hammer is a very weird fork of [Philippe Paquet's No Disposable Email plugin](http://www.joeswebtools.com/wordpress-plugins/no-disposable-email/). The original plugin was a straight forward .dat file that listed all the bad emails (generally ones like mailinator that are disposable) and while Ban Hammer doesn't do that, this would not have been possible without that which was done before.
+
+Many thanks are due to WP-Deadbolt, for making me think about SQL and TTC for StopForumSpam integration.
+
+MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
+

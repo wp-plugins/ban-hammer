@@ -36,6 +36,17 @@ function _iscurlinstalled() {
                         update_option('banhammer_stopforumspam', '0');
                 }
 
+        // Update  Show Stop Forum Spam in the users lists
+                if ($banhammer_newsfsusers = $_POST['banhammer_newsfsusers'])
+                {
+                        update_option('banhammer_showsfsusers', $banhammer_newsfsusers);
+                }
+                else
+                {
+                        update_option('banhammer_showsfsusers', '0');
+                }
+
+				
         // Update Ban Message
                 if ($banhammer_newmess = $_POST['banhammer_newmess'])
                 {
@@ -53,6 +64,12 @@ function _iscurlinstalled() {
         } else {
                 $banhammer_sfs = '';
         }
+        if (get_option('banhammer_showsfsusers') != '0' )
+        {
+                $banhammer_sfsusers = ' checked="checked"';
+        } else {
+                $banhammer_sfsusers = '';
+        }
 ?>
 
 <form method="post" width='1'>
@@ -63,7 +80,6 @@ function _iscurlinstalled() {
 
 <textarea name='banhammer_newmess' cols='80' rows='2'><?php echo get_option('banhammer_message'); ?></textarea>
 </fieldset>
-
 
 <?php if (_iscurlinstalled()) { ?>
 <fieldset class="options">
@@ -80,7 +96,12 @@ if (get_option('banhammer_stopforumspam') != '0' )
         {
 ?>
 
-<p>For a list of all users who should have been blocked by StopForumSpam, see <a href="tools.php?page=ban-hammer/ban-hammer_users.php">Ban Hammer - Users</a>.  Depending on how many users you have registered, this may take a long time to run.</p>
+<fieldset class="options">
+<legend><h3>Show StopForumSpam.com status in User List?</h3></legend>
+<p> <input type="checkbox" id="banhammer_newsfsusers" name="banhammer_newsfsusers" value="1" <?php echo $banhammer_sfsusers ?> /> If you want to show the status of users (based on their email) as spammers or not in the regular user list, you can check this box.</p>
+</fieldset>
+
+<p>For a list of all users who should have been blocked by StopForumSpam, see <a href="users.php?page=ban-hammer/ban-hammer_users.php">Ban Hammer - Users</a>.  Depending on how many users you have registered, this may take a long time to run.</p>
 
 <?php
         }
