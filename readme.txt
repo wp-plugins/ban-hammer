@@ -3,7 +3,7 @@ Contributors: Ipstenu
 Tags: email, ban, registration, buddypress
 Requires at least: 3.0
 Tested up to: 3.1
-Stable tag: 1.5.1
+Stable tag: 1.5.2
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973
 
 Prevent people from registering with any email that is listed under your comment moderation blacklist.
@@ -25,7 +25,7 @@ In addition, Ban Hammer has built in support for StopForumSpam.com which can be 
 
 **Ban Hammer now only supports WordPress 3.0 and up.**
 
-= 1.5.1 =
+= 1.5.2 =
 *09 March, 2011*
 
 * Bugfix.  Typo made it NOT enableable.
@@ -87,7 +87,7 @@ In addition, Ban Hammer has built in support for StopForumSpam.com which can be 
 
 == Upgrade Notice ==
 
-= 1.5.1 =
+= 1.5.2 =
 
 Fixes problem with enabling NOT working at all. *sigh*
 
