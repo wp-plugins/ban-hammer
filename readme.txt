@@ -78,7 +78,6 @@ In addition, Ban Hammer has built in support for StopForumSpam.com which can be 
 
 = To Do =
 
-* Make the user columns sortable
 * Spread out the scan of IDs into chunks so the Ban Hammer user page takes less time to load.
 
 == Installation ==

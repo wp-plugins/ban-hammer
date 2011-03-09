@@ -1,5 +1,8 @@
 <?php
 
+// Due to how BuddyPress Works, I had to break this out. See the link for why.
+// http://codex.buddypress.org/plugin-development/checking-buddypress-is-active/
+
 function banhammer_bp_signup( $result ) {
 
 	if ( banhammer_bp_bademail( $result['user_email'] ) )
