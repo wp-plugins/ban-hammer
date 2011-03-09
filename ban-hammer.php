@@ -26,7 +26,7 @@ global $wp_version;
 $exit_msg_ms  = 'Sorry, but this plugin is not supported (and will not work) on WordPress MultiSite.';
 $exit_msg_ver = 'Sorry, but this plugin is no longer supported on pre-3.0 WordPress installs.';
 if( is_multisite() ) { exit($exit_msg_ms); }
-if (version_compare($wp_version,"2.9","<")) { exit($exit_msg_ver); }
+if (version_compare($wp_version,"3.0","<")) { exit($exit_msg_ver); }
 
 
 
