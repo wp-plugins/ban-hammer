@@ -1,6 +1,6 @@
 === Ban Hammer ===
-Contributors: Ipstenu
 Tags: email, ban, registration, buddypress
+Contributors: Ipstenu
 Requires at least: 3.0
 Tested up to: 3.1
 Stable tag: 1.5.2
