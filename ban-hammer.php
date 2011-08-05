@@ -3,7 +3,7 @@
 Plugin Name: Ban Hammer
 Plugin URI: http://code.ipstenu.org/my-plugins/ban-hammer
 Description: This plugin prevent people from registering with any email you list.
-Version: 1.5.2
+Version: 1.6
 Author: Mika Epstein
 Author URI: http://www.ipstenu.org/
 
@@ -27,6 +27,8 @@ $exit_msg_ms  = 'Sorry, but this plugin is not supported (and will not work) on 
 $exit_msg_ver = 'Sorry, but this plugin is no longer supported on pre-3.0 WordPress installs.';
 if( is_multisite() ) { exit($exit_msg_ms); }
 if (version_compare($wp_version,"2.9","<")) { exit($exit_msg_ver); }
+
+load_plugin_textdomain('banhammer', false, basename( dirname( __FILE__ ) ) . '/languages' );
 
 // Here's the basic plugin for WordPress SANS BuddyPress
 function banhammer($user_login, $user_email, $errors) {
@@ -97,10 +99,10 @@ if (get_option('banhammer_showsfsusers') != '0' ) {
 
                 $test = "yes";
                 if ( strpos( $check, $test) > 0 ){
-                    $ret = '<em>'.__('YES!', 'stopforumspam_status').'</em>';
+                    $ret = '<em>'.__('SPAMMER', 'banhammer').'</em>';
                     return $ret;
                 } else {
-                    $ret = '<em>'.__('&nbsp;', 'stopforumspam_status').'</em>';
+                    $ret = '<em>'.__('&nbsp;', 'banhammer').'</em>';
                     return $ret;
                 }
         }
@@ -109,7 +111,7 @@ if (get_option('banhammer_showsfsusers') != '0' ) {
 
    // Add in a column header
    function stopforumspam_status($column_headers) {
-    $column_headers['stopforumspam_status'] = __('Spammer', 'stopforumspam_status');
+    $column_headers['stopforumspam_status'] = __('Spammer', 'banhammer');
     return $column_headers;
    }
 
