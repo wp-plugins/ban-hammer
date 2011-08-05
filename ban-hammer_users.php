@@ -1,5 +1,5 @@
 <div class="wrap">
-<h2><?php _e("Ban Hammer - Users</h2>
+<h2><?php _e("Ban Hammer - Users", banhammer); ?></h2>
 
 <?php
         global $wpdb;
