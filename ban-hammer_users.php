@@ -20,7 +20,7 @@ if (get_option('banhammer_stopforumspam') != '0' )
 <form action="<?php bloginfo('url'); ?>/wp-admin/users.php" method="get">
 <input type="hidden" name="wp_http_referer" value="<?php bloginfo('url'); ?>/wp-admin/users.php" />
 <?php wp_nonce_field('bulk-users') ?>
-<input type="hidden" name="action" value="delete" /> <?php _e("Delete selected spammers", banhammer); ?>: <input type="submit" value="<?php _e("Submit", banhammer); ?>" class="button-secondary action" id="doaction" name="" />
+<input type="hidden" name="action" value="delete" /> <?php _e("Delete selected spammers", banhammer); ?>: <input type="submit" value="<?php _e('Submit', banhammer); ?>" class="button-secondary action" id="doaction" name="" />
 
 <table class="widefat" cellspacing="0">
 <thead>
@@ -57,7 +57,7 @@ if (get_option('banhammer_stopforumspam') != '0' )
 ?>
                 <tr id="<?php echo $iUserID; ?>">
                   <td class="check-column" scope="row"><input type="checkbox" value="<?php echo $iUserID; ?>" id="user_<?php echo $iUserID; ?>" name="users[]"></td>
-                  <td class="username column-username"><img alt="Avatar" src="<?php echo $grav_url; ?>" class="avatar avatar-<?php echo $size; ?> photo" height="<?php echo $size; ?>" width="<?php echo $size; ?>" /> <strong><a href="user-edit.php?user_id=<?php echo $user->ID ?>&#038;wp_http_referer=%2Fblog%2Fwp-admin%2Fusers.php"><?php echo $user->user_login; ?></a></strong><br /><div class="row-actions"><span class='edit'><a href="user-edit.php?user_id=<?php echo $user->ID ?>&#038;wp_http_referer=%2Fblog%2Fwp-admin%2Fusers.php">Edit</a></span></div></td>
+                  <td class="username column-username"><img alt="Avatar" src="<?php echo $grav_url; ?>" class="avatar avatar-<?php echo $size; ?> photo" height="<?php echo $size; ?>" width="<?php echo $size; ?>" /> <strong><a href="user-edit.php?user_id=<?php echo $user->ID ?>&#038;wp_http_referer=%2Fblog%2Fwp-admin%2Fusers.php"><?php echo $user->user_login; ?></a></strong><br /><div class="row-actions"><span class='edit'><a href="user-edit.php?user_id=<?php echo $user->ID ?>&#038;wp_http_referer=%2Fblog%2Fwp-admin%2Fusers.php"><?php _e("Edit", banhammer); ?></a></span></div></td>
                   <td class="fullname column-fullname"><?php echo $username; ?></td>
                   <td class="email column-email"><?php echo $email; ?> <?php _e("is listed on StopForumSpam.com.", banhammer); ?></td>
                   <td class="registered column-registered"><?php echo date('d M Y \- g:h:s a', $registered); ?></td>

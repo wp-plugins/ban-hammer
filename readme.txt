@@ -23,8 +23,6 @@ In addition, Ban Hammer has built in support for StopForumSpam.com which can be 
 
 ==Changelog==
 
-**Ban Hammer now only supports WordPress 3.0 and up.**
-
 =1.6=
 *05 August, 2011*
 
