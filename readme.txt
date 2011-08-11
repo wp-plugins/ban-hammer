@@ -3,7 +3,7 @@ Tags: email, ban, registration, buddypress
 Contributors: Ipstenu
 Requires at least: 3.0
 Tested up to: 3.2.1
-Stable tag: 1.5.2
+Stable tag: 1.6
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973
 
 Prevent people from registering with any email that is listed under your comment moderation blacklist.
