@@ -19,14 +19,14 @@ Instead of using its own database table, Ban Hammer pulls from your list of blac
 In addition, Ban Hammer has built in support for StopForumSpam.com which can be turned on or off as desired.
 
 * [Donate](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973)
-* [Plugin Site](http://code.ipstenu.org/ban-hammer/)
+* [Plugin Site](http://tech.ipstenu.org/my-plugins/ban-hammer/)
 
 ==Changelog==
 
-=1.6=
+= 1.6 =
 *05 August, 2011*
 
-*Internationalization.
+* Internationalization.
 
 = 1.5.2 =
 *09 March, 2011*
