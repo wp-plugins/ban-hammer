@@ -24,69 +24,54 @@ In addition, Ban Hammer has built in support for StopForumSpam.com which can be 
 ==Changelog==
 
 = 1.6 =
-*05 August, 2011*
-
+* 05 August, 2011 by Ipstenu
 * Internationalization.
 
 = 1.5.2 =
-*09 March, 2011*
-
+* 09 March, 2011 by Ipstenu
 * Bugfix.  Typo made it NOT enableable.
 
 = 1.5 =
-*08 March, 2011*
-
+* 08 March, 2011 by Ipstenu
 * Allows for deletion of spammers from the User List (credit mario_7)
 * Added optional functionality to show spammer status on the normal users list.
 * Moved Ban Hammer Users to the USERS menu (now called 'Ban Hammered')
 * Works on BuddyPress!
 
 = 1.4 =
-*16 August, 2010*
-
+* 16 August, 2010 by Ipstenu
 * Checks for presence of the cURL extension. If not found, the option to use StopForumSpam is removed. (using http://cleverwp.com/function-curl-php-extension-loaded/ as recommended by kmaisch )
 
 = 1.3 =
-*08 July, 2010*
-
+* 08 July, 2010  by Ipstenu
 * Pulling out the WPMU stuff that's never going to happen now that it's MultiSite and doesn't work.
 
 = 1.2 =
-*08 November, 2009*
-
+* 08 November, 2009  by Ipstenu
 * This lists all users marked by StopForumSpam as spammers, if you're using that option (and not if not). (Thanks to obruchez for the suggestion!).
 
 = 1.1 =
-*03 May, 2009*
-
+* 03 May, 2009 by Ipstenu
 * Subversion before coffee = BAD.
 
 =  1.0 =
-*03 May, 2009*
-
+* 03 May, 2009 by Ipstenu
 * First public version.
 
 =  0.3 =
-*30 March, 2009*
-
+* 30 March, 2009 by Ipstenu
 * The error message is customizable.
 * Added support for StopForumSpam.com
 * Added in checkbox to use StopForumSpam (default to NO).
 * Cleans up after itself on deactivation (deletes the banhammer_foo values from the wp_options table because I HATE when plugins leave themselves).
 
 =  0.2 =
-*29 March, 2009*
-
+* 29 March, 2009 by Ipstenu
 * Shifted to use the WordPress comment blacklist as source. This was pretty much an 80% re-write from NDE's basis, keeping only the basic check at registration code.
 
 =  0.1 =
-*28 March, 2009*
-
+* 28 March, 2009 by Ipstenu
 * First release using No Disposable Email's .dat file as a source.
-
-= To Do =
-
-* Spread out the scan of IDs into chunks so the Ban Hammer user page takes less time to load.
 
 == Upgrade Notice ==
 
@@ -133,7 +118,7 @@ No, and it's not supported.  It won't even run. No, I have no plans to MultiSite
 
 = Does this work on BuddyPress? =
 
-Yes, yes it does.
+Yes, yes it does.  But only single site.
 
 = Why doesn't this work AT ALL on my site!? =
 
