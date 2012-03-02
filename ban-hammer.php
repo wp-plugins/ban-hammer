@@ -3,7 +3,7 @@
 Plugin Name: Ban Hammer
 Plugin URI: http://tech.ipstenu.org/my-plugins/ban-hammer
 Description: This plugin prevent people from registering with any email you list.
-Version: 1.6
+Version: 1.7
 Author: Mika Epstein
 Author URI: http://www.ipstenu.org/
 
@@ -159,4 +159,15 @@ add_action('register_post', 'banhammer', 10, 3);
 
 register_activation_hook( __FILE__, 'banhammer_activate' );
 register_deactivation_hook( __FILE__, 'banhammer_deactivate' );
+
+// donate link on manage plugin page
+add_filter('plugin_row_meta', 'banhammer_donate_link', 10, 2);
+function banhammer_donate_link($links, $file) {
+        if ($file == plugin_basename(__FILE__)) {
+                $donate_link = '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ipstenu%40ipstenu%2eorg">Donate</a>';
+                $links[] = $donate_link;
+        }
+        return $links;
+}
+
 ?>
