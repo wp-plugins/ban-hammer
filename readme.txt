@@ -5,8 +5,10 @@ Requires at least: 3.0
 Tested up to: 3.4
 Stable tag: 1.6.1
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973
+Plugin URI: http://halfelf.org/plugins/ban-hammer/
+Author URI: http://ipstenu.org/
 
-Prevent people from registering with any email that is listed under your comment moderation blacklist.
+Prevent people from registering via your comment moderation blacklist.
 
 == Description ==
 
@@ -19,7 +21,7 @@ Instead of using its own database table, Ban Hammer pulls from your list of blac
 In addition, Ban Hammer has built in support for StopForumSpam.com which can be turned on or off as desired.
 
 * [Donate](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973)
-* [Plugin Site](http://tech.ipstenu.org/my-plugins/ban-hammer/)
+* [Plugin Site](http://halfelf.org/plugins/ban-hammer/)
 
 ==Changelog==
 
