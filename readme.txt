@@ -2,8 +2,8 @@
 Contributors: Ipstenu
 Tags: email, ban, registration, buddypress
 Requires at least: 3.0
-Tested up to: 3.3
-Stable tag: 1.6
+Tested up to: 3.4
+Stable tag: 1.6.1
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973
 
 Prevent people from registering with any email that is listed under your comment moderation blacklist.
@@ -22,6 +22,10 @@ In addition, Ban Hammer has built in support for StopForumSpam.com which can be 
 * [Plugin Site](http://tech.ipstenu.org/my-plugins/ban-hammer/)
 
 ==Changelog==
+
+= 1.6.1 =
+* 17 April, 2012 by Ipstenu
+* Cleanup. Nothing major here, just documentation and all.
 
 = 1.6 =
 * 05 August, 2011 by Ipstenu

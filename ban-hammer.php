@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Ban Hammer
-Plugin URI: http://tech.ipstenu.org/my-plugins/ban-hammer
+Plugin URI: http://halfelf.org/plugins/ban-hammer/
 Description: This plugin prevent people from registering with any email you list.
-Version: 1.7
+Version: 1.6.1
 Author: Mika Epstein
 Author URI: http://www.ipstenu.org/
 
