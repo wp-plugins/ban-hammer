@@ -3,7 +3,7 @@
 Plugin Name: Ban Hammer
 Plugin URI: http://halfelf.org/plugins/ban-hammer/
 Description: This plugin prevent people from registering with any email you list.
-Version: 1.6.1
+Version: 1.7
 Author: Mika Epstein
 Author URI: http://www.ipstenu.org/
 
@@ -128,28 +128,17 @@ if (get_option('banhammer_showsfsusers') != '0' ) {
 
 // Create the options for the message and spam assassin and set some defaults.
 function banhammer_activate() {
-        update_option('banhammer_stopforumspam', '0');
+        add_option('banhammer_stopforumspam', '0');
 		update_option('banhammer_showsfsusers', '0');
-        update_option('banhammer_message', '<strong>ERROR</strong>: Your email has been banned from registration.');
-}
-
-// Delete the options if the plugin is being turned off (pet peeve) - This DOES NOT wipe out your blacklist.
-function banhammer_deactivate() {
-        delete_option('banhammer_stopforumspam');
-		delete_option('banhammer_showsfsusers');
-        delete_option('banhammer_message');
+        add_option('banhammer_message', '<strong>ERROR</strong>: Your email has been banned from registration.');
 }
 
 // Load the options pages
 function banhammer_optionsmenu() {
-        if (function_exists('add_submenu_page')) {
-          add_submenu_page('tools.php', 'Ban Hammer', 'Ban Hammer', '8', 'ban-hammer/ban-hammer_options.php');
-        }
+    add_submenu_page('tools.php', 'Ban Hammer', 'Ban Hammer', 'moderate_comments', 'ban-hammer/ban-hammer_options.php');
 }
 function banhammer_usersmenu() {
-    if (function_exists('add_submenu_page')) {
-      add_submenu_page('users.php', 'Ban Hammered', 'Ban Hammered', '8', 'ban-hammer/ban-hammer_users.php');
-    }
+      add_submenu_page('users.php', 'Ban Hammered', 'Ban Hammered', 'moderate_comments', 'ban-hammer/ban-hammer_users.php');
 }
 
 // Hooks
@@ -158,7 +147,6 @@ add_action('admin_menu', 'banhammer_usersmenu');
 add_action('register_post', 'banhammer', 10, 3);
 
 register_activation_hook( __FILE__, 'banhammer_activate' );
-register_deactivation_hook( __FILE__, 'banhammer_deactivate' );
 
 // donate link on manage plugin page
 add_filter('plugin_row_meta', 'banhammer_donate_link', 10, 2);
