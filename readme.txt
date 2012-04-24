@@ -3,7 +3,7 @@ Contributors: Ipstenu
 Tags: email, ban, registration, buddypress
 Requires at least: 3.0
 Tested up to: 3.4
-Stable tag: 1.6.1
+Stable tag: 1.7
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973
 Plugin URI: http://halfelf.org/plugins/ban-hammer/
 Author URI: http://ipstenu.org/
@@ -24,6 +24,10 @@ In addition, Ban Hammer has built in support for StopForumSpam.com which can be 
 * [Plugin Site](http://halfelf.org/plugins/ban-hammer/)
 
 ==Changelog==
+
+= 1.7 =
+* 24 April, 2012 by Ipstenu
+* Proper uninstallation.
 
 = 1.6.1 =
 * 17 April, 2012 by Ipstenu
