@@ -5,8 +5,6 @@ Requires at least: 3.0
 Tested up to: 3.4
 Stable tag: 1.7
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5227973
-Plugin URI: http://halfelf.org/plugins/ban-hammer/
-Author URI: http://ipstenu.org/
 
 Prevent people from registering via your comment moderation blacklist.
 
