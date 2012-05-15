@@ -22,6 +22,13 @@ In addition, Ban Hammer has built in support for StopForumSpam.com which can be 
 * [Donate](https://www.wepay.com/donations/halfelf-wp)
 * [Plugin Site](http://halfelf.org/plugins/ban-hammer/)
 
+= Credits =
+Ban Hammer is a very weird fork of [Philippe Paquet's No Disposable Email plugin](http://www.joeswebtools.com/wordpress-plugins/no-disposable-email/). The original plugin was a straight forward .dat file that listed all the bad emails (generally ones like mailinator that are disposable) and while Ban Hammer doesn't do that, this would not have been possible without that which was done before.
+
+Many thanks are due to WP-Deadbolt, for making me think about SQL and TTC for StopForumSpam integration.
+
+MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
+
 ==Changelog==
 
 = 1.8 =
@@ -136,11 +143,4 @@ Yes, yes it does.  But only single site.
 = Why doesn't this work AT ALL on my site!? =
 
 I'm not sure. I've gotten a handful of reports from people where it's not working, and for the life of me, I'm stumped. So far, it looks like Zend and/or eAccelerator aren't agreeing with this. If it's failing, please post on the wp.org forums with your server specs (PHP info, server type, etc) and any plugins you're running.
-
-== Credits ==
-Ban Hammer is a very weird fork of [Philippe Paquet's No Disposable Email plugin](http://www.joeswebtools.com/wordpress-plugins/no-disposable-email/). The original plugin was a straight forward .dat file that listed all the bad emails (generally ones like mailinator that are disposable) and while Ban Hammer doesn't do that, this would not have been possible without that which was done before.
-
-Many thanks are due to WP-Deadbolt, for making me think about SQL and TTC for StopForumSpam integration.
-
-MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
 
