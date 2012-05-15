@@ -3,7 +3,7 @@
 Plugin Name: Ban Hammer
 Plugin URI: http://halfelf.org/plugins/ban-hammer/
 Description: This plugin prevent people from registering with any email you list.
-Version: 1.7
+Version: 1.8
 Author: Mika Epstein
 Author URI: http://www.ipstenu.org/
 
@@ -122,15 +122,14 @@ if (get_option('banhammer_showsfsusers') != '0' ) {
 
    add_filter('manage_users_columns', 'stopforumspam_status');
    add_action('manage_users_custom_column',  'stopforumspam_columns', 10, 3);
-
 }
 
-
+$defaulterror = __('<strong>ERROR</strong>: Your email has been banned from registration.', 'banhammer');
 // Create the options for the message and spam assassin and set some defaults.
 function banhammer_activate() {
         add_option('banhammer_stopforumspam', '0');
 		update_option('banhammer_showsfsusers', '0');
-        add_option('banhammer_message', '<strong>ERROR</strong>: Your email has been banned from registration.');
+        add_option('banhammer_message', $defaulterror);
 }
 
 // Load the options pages
@@ -143,7 +142,11 @@ function banhammer_usersmenu() {
 
 // Hooks
 add_action('admin_menu', 'banhammer_optionsmenu');
-add_action('admin_menu', 'banhammer_usersmenu');
+
+// Hide this unless they're using Stop Forum Spam.
+if (get_option('banhammer_stopforumspam') != '0' )
+	{add_action('admin_menu', 'banhammer_usersmenu'); }
+
 add_action('register_post', 'banhammer', 10, 3);
 
 register_activation_hook( __FILE__, 'banhammer_activate' );
@@ -157,5 +160,3 @@ function banhammer_donate_link($links, $file) {
         }
         return $links;
 }
-
-?>

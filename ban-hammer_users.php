@@ -22,7 +22,7 @@ Copyright 2009-11 Mika Epstein (email: ipstenu@ipstenu.org)
 
 ?>
 <div class="wrap">
-<h2><?php _e("Ban Hammer - Users", banhammer); ?></h2>
+<h2><?php _e('Ban Hammer - Users', banhammer); ?></h2>
 
 <?php
         global $wpdb;
@@ -31,9 +31,9 @@ Copyright 2009-11 Mika Epstein (email: ipstenu@ipstenu.org)
         $default = $wpdb->get_var("SELECT option_value FROM $wpdb->options WHERE option_name='avatar_default'");
 ?>
 
-<h3><?php _e("Hammer the Users", banhammer); ?></h3>
+<h3><?php _e('Hammer the Users', banhammer); ?></h3>
 
-<p><?php _e("Sometimes a user registers before StopForumSpam catches them. Check here to see who's on your naughty list!", banhammer); ?></p>
+<p><?php _e('Sometimes a user registers before StopForumSpam catches them. Check here to see who\'s on your naughty list!', banhammer); ?></p>
 
 <?php
 if (get_option('banhammer_stopforumspam') != '0' )
@@ -82,7 +82,7 @@ if (get_option('banhammer_stopforumspam') != '0' )
                   <td class="check-column" scope="row"><input type="checkbox" value="<?php echo $iUserID; ?>" id="user_<?php echo $iUserID; ?>" name="users[]"></td>
                   <td class="username column-username"><img alt="Avatar" src="<?php echo $grav_url; ?>" class="avatar avatar-<?php echo $size; ?> photo" height="<?php echo $size; ?>" width="<?php echo $size; ?>" /> <strong><a href="user-edit.php?user_id=<?php echo $user->ID ?>&#038;wp_http_referer=%2Fblog%2Fwp-admin%2Fusers.php"><?php echo $user->user_login; ?></a></strong><br /><div class="row-actions"><span class='edit'><a href="user-edit.php?user_id=<?php echo $user->ID ?>&#038;wp_http_referer=%2Fblog%2Fwp-admin%2Fusers.php"><?php _e("Edit", banhammer); ?></a></span></div></td>
                   <td class="fullname column-fullname"><?php echo $username; ?></td>
-                  <td class="email column-email"><?php echo $email; ?> <?php _e("is listed on StopForumSpam.com.", banhammer); ?></td>
+                  <td class="email column-email"><?php echo $email; ?> <?php _e('is listed on StopForumSpam.com.', banhammer); ?></td>
                   <td class="registered column-registered"><?php echo date('d M Y \- g:h:s a', $registered); ?></td>
                 </tr>
                   <?php
@@ -95,7 +95,7 @@ if (get_option('banhammer_stopforumspam') != '0' )
 <?php
 }
 else { ?>
-<p><?php _e("You're not using StopForumSpam.", banhammer); ?></p>
+<p><?php _e('You\'re not using StopForumSpam.', banhammer); ?></p>
 
 <?php } ?>
 </div>

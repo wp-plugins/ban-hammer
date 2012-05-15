@@ -24,6 +24,10 @@ In addition, Ban Hammer has built in support for StopForumSpam.com which can be 
 
 ==Changelog==
 
+= 1.8 =
+* XX May, 2012 by Ipstenu
+* Cleanup, documentation, more internationalization (which I'm sure I screwed up ... Again.)
+
 = 1.7 =
 * 24 April, 2012 by Ipstenu
 * Proper uninstallation.

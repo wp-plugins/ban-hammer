@@ -98,7 +98,7 @@ function _iscurlinstalled() {
 
 <fieldset class="options">
 <legend><h3><?php _e('Personalize the Message', banhammer); ?></h3></legend>
-<p><?php _e("The message below is displayed to users who are not allowed to register on your blog. Edit is as you see fit, but remember you don't get a LOT of space so keep it simple.", banhammer); ?></p>
+<p><?php _e('The message below is displayed to users who are not allowed to register on your blog. Edit is as you see fit, but remember you don\'t get a LOT of space so keep it simple.', banhammer); ?></p>
 
 <textarea name='banhammer_newmess' cols='80' rows='2'><?php echo get_option('banhammer_message'); ?></textarea>
 </fieldset>
@@ -106,11 +106,11 @@ function _iscurlinstalled() {
 <?php if (_iscurlinstalled()) { ?>
 <fieldset class="options">
 <legend><h3><?php _e('Use StopForumSpam.com?', banhammer); ?></h3></legend>
-<p> <input type="checkbox" id="banhammer_newsfs" name="banhammer_newsfs" value="1" <?php echo $banhammer_sfs ?> /> <a href="http://www.stopforumspam.com/">StopForumSpam.com</a> is a repository for forum spambots.  Since a disturbingly high number of them also sign up on blogs, some people may want to block them here as well.  If you do, check the box. If not, leave it alone (which is the default).</p>
+<p> <input type="checkbox" id="banhammer_newsfs" name="banhammer_newsfs" value="1" <?php echo $banhammer_sfs ?> /> <a href="http://www.stopforumspam.com/">StopForumSpam.com</a> <?php _e('is a repository for forum spambots.  Since a disturbingly high number of them also sign up on blogs, some people may want to block them here as well.  If you do, check the box. If not, leave it alone (which is the default).', banhammer); ?></p>
 </fieldset>
 <?php 	}
 	else { ?>
-		<p><?php _e("It does not appear that you have cURL installed on your server.  The StopForumSpam checker will not run without it, and as such, you cannot use it.  Sorry about that. Ask your webhost about getting cURL installed.", banhammer); ?></p>
+		<p><?php _e('It does not appear that you have cURL installed on your server.  The StopForumSpam checker will not run without it, and as such, you cannot use it.  Sorry about that. Ask your webhost about getting cURL installed.', banhammer); ?></p>
 <?php } ?>
 
 <?php
@@ -120,10 +120,10 @@ if (get_option('banhammer_stopforumspam') != '0' )
 
 <fieldset class="options">
 <legend><h3><?php _e("Show StopForumSpam.com status in User List?", banhammer); ?></h3></legend>
-<p> <input type="checkbox" id="banhammer_newsfsusers" name="banhammer_newsfsusers" value="1" <?php echo $banhammer_sfsusers ?> /> <?php _e("If you want to show the status of users (based on their email) as spammers or not in the regular user list, you can check this box.", banhammer); ?></p>
+<p> <input type="checkbox" id="banhammer_newsfsusers" name="banhammer_newsfsusers" value="1" <?php echo $banhammer_sfsusers ?> /> <?php _e('If you want to show the status of users (based on their email) as spammers or not in the regular user list, you can check this box.', banhammer); ?></p>
 </fieldset>
 
-<p><?php _e("For a list of all users who should have been blocked by StopForumSpam, see", banhammer); ?> <a href="users.php?page=ban-hammer/ban-hammer_users.php"><?php _e("Ban Hammer - Users", banhammer); ?></a>.  <?php _e("Depending on how many users you have registered, this may take a long time to run.", banhammer); ?></p>
+<p><?php _e('For a list of all users who should have been blocked by StopForumSpam, see', banhammer); ?> <a href="users.php?page=ban-hammer/ban-hammer_users.php"><?php _e("Ban Hammer - Users", banhammer); ?></a>.  <?php _e('Depending on how many users you have registered, this may take a long time to run.', banhammer); ?></p>
 
 <?php
         }
@@ -131,15 +131,15 @@ if (get_option('banhammer_stopforumspam') != '0' )
 ?>
 
 <fieldset class="options">
-<legend><h3><?php _e("Blacklisted Domains", banhammer); ?></h3></legend>
-<p><?php _e("The domains added below will not be allowed to be used during registration.", banhammer); ?></p>
+<legend><h3><?php _e('Blacklisted Domains', banhammer); ?></h3></legend>
+<p><?php _e('The domains added below will not be allowed to be used during registration.', banhammer); ?></p>
 
 <textarea name="blacklist_keys" cols="40" rows="15"><?php
         $blacklist = get_option('blacklist_keys');
         echo $blacklist;
 ?></textarea>
 </fieldset>
-        <p class="submit"><input type="submit" name="update" value="<?php _e("Update Options", banhammer); ?>" /></p>
+        <p class="submit"><input type="submit" name="update" value="<?php _e('Update Options', banhammer); ?>" /></p>
 
 </form>
 

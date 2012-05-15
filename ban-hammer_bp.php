@@ -72,5 +72,3 @@ function banhammer_bp_bademail( $user_email ) {
                 }
         }
 }
-
-?>
