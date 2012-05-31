@@ -92,11 +92,6 @@ function banhammer_activate() {
         add_option('banhammer_message', '<strong>ERROR</strong>: Your email has been banned from registration.');
 }
 
-// Load the options pages
-function banhammer_optionsmenu() {
-    add_submenu_page('tools.php', 'Ban Hammer', 'Ban Hammer', 'moderate_comments', 'ban-hammer/ban-hammer_options.php');
-}
-
 // Hooks
 add_action('admin_menu', 'banhammer_optionsmenu');
 add_action('register_post', 'banhammer', 10, 3);
@@ -123,7 +118,7 @@ function banhammer_optionsmenu() {
 function banhammer_plugin_help() {
 	global $banhammer_options_page;
 	$screen = get_current_screen();
-	if ($screen->id != 'settings_page_banhammer-network')
+	if ($screen->id != 'tools_page_banhammer')
 		return;
 		
 	$screen->add_help_tab( array(
@@ -174,15 +169,16 @@ function banhammer_options() {
                         {
                                 update_option('banhammer_message', $banhammer_newmess);
                         }
-        
         ?>
-                <div id="message" class="updated fade"><p><strong><?php _e('Options Updated!', banhammer); ?></strong></p></div>
+                <div id="message" class="updated fade"><p><strong><?php _e('Options Updated!', 'banhammer'); ?></strong></p></div>
+
+<?php   } ?>
         
         <form method="post" width='1'>
         
         <fieldset class="options">
         <legend><h3><?php _e('Personalize the Message', banhammer); ?></h3></legend>
-        <p><?php _e('The message below is displayed to users who are not allowed to register on your blog. Edit is as you see fit, but remember you don\'t get a LOT of space so keep it simple.', banhammer); ?></p>
+        <p><?php _e('The message below is displayed to users who are not allowed to register on your blog. Edit is as you see fit, but remember you don\'t get a lot of space so keep it simple.', banhammer); ?></p>
         
         <textarea name='banhammer_newmess' cols='80' rows='2'><?php echo get_option('banhammer_message'); ?></textarea>
         </fieldset>
@@ -196,14 +192,11 @@ function banhammer_options() {
                 echo $blacklist;
         ?></textarea>
         </fieldset>
-                <p class="submit"><input type="submit" name="update" value="<?php _e('Update Options', banhammer); ?>" /></p>
+                <p class="submit"><input class='button-primary' type='submit' name='update' value='<?php _e("Update Options", 'banhammer'); ?>' id='submitbutton' /></p>
         
         </form>
         
         </div>
-        
-        <p><input class='button-primary' type='submit' name='update' value='<?php _e("Update Options", 'banhammer'); ?>' id='submitbutton' /></p>
-        </form>
         
         </div> <?php
         }
