@@ -112,3 +112,98 @@ function banhammer_donate_link($links, $file) {
         }
         return $links;
 }
+
+// Options Pages
+
+// add the admin options page
+function banhammer_optionsmenu() {
+    add_submenu_page('tools.php', __('Ban Hammer', 'banhammer'), __('Ban Hammer', 'banhammer'), 'moderate_comments', 'banhammer', 'banhammer_options');
+}
+
+function banhammer_plugin_help() {
+	global $banhammer_options_page;
+	$screen = get_current_screen();
+	if ($screen->id != 'settings_page_banhammer-network')
+		return;
+		
+	$screen->add_help_tab( array(
+		'id'      => 'ippy-banhammer-base',
+		'title'   => __('Readme', 'banhammer'),
+		'content' => 
+		'<h3>' . __('Ban Hammer', 'banhammer') .'</h3>' .
+		'<p>' . __( 'We\'ve all had this problem.  A group of spammers from mail.ru are registering to your blog, but you want to keep registration open.  How do you kill the spammers without bothering your clientele?  While you could edit your functions.php and block the domain, once you get past a few bad eggs, you have to escalate.', 'banhammer' ) . '</p>' .
+		'<p>' . __( 'Ban Hammer does that for you, preventing unwanted users from registering.', 'banhammer' ) . '</p>' . 
+		'<p>' . __( 'Instead of using its own database table, Ban Hammer pulls from your list of blacklisted emails from the Comment Blacklist feature, native to WordPress.  Since emails never equal IP addresses, it simply skips over and ignores them.  This means you only have ONE place to update and maintain your blacklist.  When a blacklisted user attempts to register, they get a customizable message that they cannot register.', 'banhammer' ) . '</p>' .
+		'<p>' . __( 'Limited free support can be found in the WordPress forums.','banhammer').'</p>'.
+		'<ul>'.
+			'<li><a href="http://wordpress.org/extend/plugins/ban-hammer/support/">'. __( 'Support Forums','banhammer').'</a></li>'.
+			'<li><a href="http://tech.ipstenu.org/my-plugins/ban-hammer/">'. __( 'Plugin Site','banhammer').'</a></li>'.
+			'<li><a href="https://www.wepay.com/donations/halfelf-wp">'. __( 'Donate','banhammer').'</a></li>'.
+		'</ul>'
+	));
+
+}
+add_action('contextual_help', 'banhammer_plugin_help', 10, 3);
+
+register_activation_hook( __FILE__, 'banhammer_activate' );
+
+// Settings Page
+function banhammer_options() {
+
+        ?>
+        <div class="wrap">
+        
+        <div id="icon-edit-comments" class="icon32"></div>
+        <h2><?php _e("Ban Hammer", 'banhammer'); ?></h2>
+        
+        <?php
+        
+                if (isset($_POST['update']))
+                {
+                // Update the Blacklist
+                        if ($banhammer_keys = $_POST['blacklist_keys'])
+                        {
+                                $banhammer_array = explode("\n", $banhammer_keys);
+                                sort ($banhammer_array);
+                                $banhammer_string = implode("\n", $banhammer_array);
+                                update_option('blacklist_keys', $banhammer_string);
+                        }
+        				
+                // Update Ban Message
+                        if ($banhammer_newmess = $_POST['banhammer_newmess'])
+                        {
+                                update_option('banhammer_message', $banhammer_newmess);
+                        }
+        
+        ?>
+                <div id="message" class="updated fade"><p><strong><?php _e('Options Updated!', banhammer); ?></strong></p></div>
+        
+        <form method="post" width='1'>
+        
+        <fieldset class="options">
+        <legend><h3><?php _e('Personalize the Message', banhammer); ?></h3></legend>
+        <p><?php _e('The message below is displayed to users who are not allowed to register on your blog. Edit is as you see fit, but remember you don\'t get a LOT of space so keep it simple.', banhammer); ?></p>
+        
+        <textarea name='banhammer_newmess' cols='80' rows='2'><?php echo get_option('banhammer_message'); ?></textarea>
+        </fieldset>
+        
+        <fieldset class="options">
+        <legend><h3><?php _e('Blacklisted Domains', banhammer); ?></h3></legend>
+        <p><?php _e('The domains added below will not be allowed to be used during registration.', banhammer); ?></p>
+        
+        <textarea name="blacklist_keys" cols="40" rows="15"><?php
+                $blacklist = get_option('blacklist_keys');
+                echo $blacklist;
+        ?></textarea>
+        </fieldset>
+                <p class="submit"><input type="submit" name="update" value="<?php _e('Update Options', banhammer); ?>" /></p>
+        
+        </form>
+        
+        </div>
+        
+        <p><input class='button-primary' type='submit' name='update' value='<?php _e("Update Options", 'banhammer'); ?>' id='submitbutton' /></p>
+        </form>
+        
+        </div> <?php
+        }
