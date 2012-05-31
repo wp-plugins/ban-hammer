@@ -17,23 +17,20 @@ Ban Hammer does that for you, preventing unwanted users from registering.
 
 Instead of using its own database table, Ban Hammer pulls from your list of blacklisted emails from the Comment Blacklist feature, native to WordPress.  Since emails never equal IP addresses, it simply skips over and ignores them.  This means you only have ONE place to update and maintain your blacklist.  When a blacklisted user attempts to register, they get a customizable message that they cannot register.
 
-In addition, Ban Hammer has built in support for StopForumSpam.com which can be turned on or off as desired.
+Ban Hammer <em>no longer</em> uses Stop Forum Spam. <a href="http://wordpress.org/extend/plugins/stop-spammer-registrations-plugin/">Stop Spammer Registrations</a> did it so much better, I bow to their genius.
 
 * [Donate](https://www.wepay.com/donations/halfelf-wp)
-* [Plugin Site](http://halfelf.org/plugins/ban-hammer/)
 
 = Credits =
 Ban Hammer is a very weird fork of [Philippe Paquet's No Disposable Email plugin](http://www.joeswebtools.com/wordpress-plugins/no-disposable-email/). The original plugin was a straight forward .dat file that listed all the bad emails (generally ones like mailinator that are disposable) and while Ban Hammer doesn't do that, this would not have been possible without that which was done before.
 
-Many thanks are due to WP-Deadbolt, for making me think about SQL and TTC for StopForumSpam integration.
-
-MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
+Many thanks are due to WP-Deadbolt, for making me think about SQL and TTC for StopForumSpam integration. MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
 
 ==Changelog==
 
-= 1.8 =
-* XX May, 2012 by Ipstenu
-* Cleanup, documentation, more internationalization (which I'm sure I screwed up ... Again.)
+= 2.0 =
+* 30 May, 2012 by Ipstenu
+* Removal of Stop Forum Spam.
 
 = 1.7 =
 * 24 April, 2012 by Ipstenu
@@ -95,16 +92,17 @@ MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
 
 == Upgrade Notice ==
 
+= 2.0 =
+
+This plugin no longer uses Stop Forum Spam. If you need that feature, please use <a href="http://wordpress.org/extend/plugins/stop-spammer-registrations-plugin/">Stop Spammer Registrations</a> instead. They did it way better.
+
 = 1.5.2 =
 
 Fixes problem with enabling NOT working at all. *sigh*
 
 == Installation ==
 
-1. Unpack the zip file and extract the `/ban-hammer/` folder and the files.
-2. Using an FTP program, upload the full `/ban-hammer/` folder to your WordPress plugins directory (Example: `/wp-content/plugins/`).
-3. Go to **Plugins > Installed** and activate the plugin.
-4. Go to **Tools > Ban Hammer** to customize the error message (and banned emails, but it's the same list from your comment moderation so...).
+After installation, go to **Tools > Ban Hammer** to customize the error message (and banned emails, but it's the same list from your comment moderation so...).
 
 == Screenshots ==
 
@@ -124,13 +122,9 @@ Yes! They are the exact same list, they use the same fields and they update the 
 
 No.  Since WordPress doesn't list rejected comments (your blacklist goes to a blackhole), I didn't bother with trying to do that here. If enough people think it's a need, I may consider it.
 
-= It breaks when I turn on StopForumSpam checking. Why? =
+= Where did Stop Forum Spam go? =
 
-At a guess, you don't have [cURL support](http://us.php.net/curl). You may need to check with your webhost about that. If they do have cURL setup, share the error with me and I'll try to debug!
-
-= Will you add other spam lists? =
-
-Sure. Or at least I'll try.  I'm not a genius so I may need help with APIs and the right PHP calls.
+This plugin no longer uses Stop Forum Spam. If you need that feature, please use <a href="http://wordpress.org/extend/plugins/stop-spammer-registrations-plugin/">Stop Spammer Registrations</a> instead. They did it way better.
 
 = Does this work on MultiSite? =
 
