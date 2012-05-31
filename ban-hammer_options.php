@@ -27,16 +27,6 @@ Copyright 2009-11 Mika Epstein (email: ipstenu@ipstenu.org)
 <?php
 global $wpdb;
 
-// Checks for presence of the cURL extension.
-function _iscurlinstalled() {
-	if  (in_array  ('curl', get_loaded_extensions())) {
-		return true;
-	}
-	else{
-		return false;
-	}
-}
-
         if (isset($_POST['update']))
         {
         // Update the Blacklist
@@ -47,27 +37,6 @@ function _iscurlinstalled() {
                         $banhammer_string = implode("\n", $banhammer_array);
                         update_option('blacklist_keys', $banhammer_string);
                 }
-
-        // Update Stop Forum Spam
-                if ($banhammer_newsfs = $_POST['banhammer_newsfs'])
-                {
-                        update_option('banhammer_stopforumspam', $banhammer_newsfs);
-                }
-                else
-                {
-                        update_option('banhammer_stopforumspam', '0');
-                }
-
-        // Update  Show Stop Forum Spam in the users lists
-                if ($banhammer_newsfsusers = $_POST['banhammer_newsfsusers'])
-                {
-                        update_option('banhammer_showsfsusers', $banhammer_newsfsusers);
-                }
-                else
-                {
-                        update_option('banhammer_showsfsusers', '0');
-                }
-
 				
         // Update Ban Message
                 if ($banhammer_newmess = $_POST['banhammer_newmess'])
@@ -77,22 +46,6 @@ function _iscurlinstalled() {
 
 ?>
         <div id="message" class="updated fade"><p><strong><?php _e('Options Updated!', banhammer); ?></strong></p></div>
-<?php
-        }
-
-        if (get_option('banhammer_stopforumspam') != '0' )
-        {
-                $banhammer_sfs = ' checked="checked"';
-        } else {
-                $banhammer_sfs = '';
-        }
-        if (get_option('banhammer_showsfsusers') != '0' )
-        {
-                $banhammer_sfsusers = ' checked="checked"';
-        } else {
-                $banhammer_sfsusers = '';
-        }
-?>
 
 <form method="post" width='1'>
 
@@ -103,8 +56,9 @@ function _iscurlinstalled() {
 <textarea name='banhammer_newmess' cols='80' rows='2'><?php echo get_option('banhammer_message'); ?></textarea>
 </fieldset>
 
-<?php if (_iscurlinstalled()) { ?>
 <fieldset class="options">
+<<<<<<< .mine
+=======
 <legend><h3><?php _e('Use StopForumSpam.com?', banhammer); ?></h3></legend>
 <p> <input type="checkbox" id="banhammer_newsfs" name="banhammer_newsfs" value="1" <?php echo $banhammer_sfs ?> /> <a href="http://www.stopforumspam.com/">StopForumSpam.com</a> <?php _e('is a repository for forum spambots.  Since a disturbingly high number of them also sign up on blogs, some people may want to block them here as well.  If you do, check the box. If not, leave it alone (which is the default).', banhammer); ?></p>
 </fieldset>
@@ -131,6 +85,7 @@ if (get_option('banhammer_stopforumspam') != '0' )
 ?>
 
 <fieldset class="options">
+>>>>>>> .r551146
 <legend><h3><?php _e('Blacklisted Domains', banhammer); ?></h3></legend>
 <p><?php _e('The domains added below will not be allowed to be used during registration.', banhammer); ?></p>
 
