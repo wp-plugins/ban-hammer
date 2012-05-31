@@ -131,7 +131,7 @@ function banhammer_plugin_help() {
 		'<p>' . __( 'Instead of using its own database table, Ban Hammer pulls from your list of blacklisted emails from the Comment Blacklist feature, native to WordPress.  Since emails never equal IP addresses, it simply skips over and ignores them.  This means you only have ONE place to update and maintain your blacklist.  When a blacklisted user attempts to register, they get a customizable message that they cannot register.', 'banhammer' ) . '</p>' .
 		'<p>' . __( 'Limited free support can be found in the WordPress forums.','banhammer').'</p>'.
 		'<ul>'.
-			'<li><a href="http://wordpress.org/extend/plugins/ban-hammer/support/">'. __( 'Support Forums','banhammer').'</a></li>'.
+			'<li><a href="http://wordpress.org/support/plugin/ban-hammer">'. __( 'Support Forums','banhammer').'</a></li>'.
 			'<li><a href="http://tech.ipstenu.org/my-plugins/ban-hammer/">'. __( 'Plugin Site','banhammer').'</a></li>'.
 			'<li><a href="https://www.wepay.com/donations/halfelf-wp">'. __( 'Donate','banhammer').'</a></li>'.
 		'</ul>'
