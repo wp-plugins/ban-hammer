@@ -3,7 +3,7 @@ Contributors: Ipstenu
 Tags: email, ban, registration, buddypress
 Requires at least: 3.0
 Tested up to: 3.4
-Stable tag: 1.7
+Stable tag: 2.0
 Donate Link: https://www.wepay.com/donations/halfelf-wp
 License: GPLv2
 
@@ -24,13 +24,14 @@ Ban Hammer <em>no longer</em> uses Stop Forum Spam. <a href="http://wordpress.or
 = Credits =
 Ban Hammer is a very weird fork of [Philippe Paquet's No Disposable Email plugin](http://www.joeswebtools.com/wordpress-plugins/no-disposable-email/). The original plugin was a straight forward .dat file that listed all the bad emails (generally ones like mailinator that are disposable) and while Ban Hammer doesn't do that, this would not have been possible without that which was done before.
 
-Many thanks are due to WP-Deadbolt, for making me think about SQL and TTC for StopForumSpam integration. MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix!
+Many thanks are due to WP-Deadbolt, for making me think about SQL and TTC for StopForumSpam integration. MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix! And then props to Helen Hou-Sandi for not using curl at all. Protip? Use <a href="http://planetozh.com/blog/2009/08/how-to-make-http-requests-with-wordpress/">WP_http</a> instead!
 
 ==Changelog==
 
 = 2.0 =
 * 30 May, 2012 by Ipstenu
 * Removal of Stop Forum Spam.
+* Whole plugin was consolidated to run faster, with fewer files, and with contextual help. Egad, I've learned a lot since 2009!
 
 = 1.7 =
 * 24 April, 2012 by Ipstenu
