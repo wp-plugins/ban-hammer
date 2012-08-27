@@ -15,7 +15,7 @@ We've all had this problem.  A group of spammers from mail.ru are registering to
 
 Ban Hammer does that for you, preventing unwanted users from registering.
 
-Instead of using its own database table, Ban Hammer pulls from your list of blacklisted emails from the Comment Blacklist feature, native to WordPress.  Since emails never equal IP addresses, it simply skips over and ignores them.  This means you only have ONE place to update and maintain your blacklist.  When a blacklisted user attempts to register, they get a customizable message that they cannot register.
+On a single install of WP, instead of using its own database table, Ban Hammer pulls from your list of blacklisted emails from the Comment Blacklist feature, native to WordPress.  Since emails never equal IP addresses, it simply skips over and ignores them. On a network instance, there's a network wide setting for banned emails and domains. This means you only have <em>one</em> place to update and maintain your blacklist.  When a blacklisted user attempts to register, they get a customizable message that they cannot register.
 
 Ban Hammer <em>no longer</em> uses Stop Forum Spam. <a href="http://wordpress.org/extend/plugins/stop-spammer-registrations-plugin/">Stop Spammer Registrations</a> did it so much better, I bow to their genius.
 
@@ -27,6 +27,10 @@ Ban Hammer is a very weird fork of [Philippe Paquet's No Disposable Email plugin
 Many thanks are due to WP-Deadbolt, for making me think about SQL and TTC for StopForumSpam integration. MASSIVE credit to Travis Hamera for the StopForumSpam/cURL fix! And then props to Helen Hou-Sandi for not using curl at all. Protip? Use <a href="http://planetozh.com/blog/2009/08/how-to-make-http-requests-with-wordpress/">WP_http</a> instead!
 
 ==Changelog==
+
+= 2.1 =
+* 26 August, 2012 by Ipstenu
+* The return of Multisite
 
 = 2.0 =
 * 30 May, 2012 by Ipstenu
@@ -103,7 +107,11 @@ Fixes problem with enabling NOT working at all. *sigh*
 
 == Installation ==
 
+<strong>Single Install</strong>
 After installation, go to **Tools > Ban Hammer** to customize the error message (and banned emails, but it's the same list from your comment moderation so...).
+
+<strong>Multisite</strong?
+After installation, go to **Network Admain > Settings > Ban Hammer** to customize the error message and banned email list. This will ban users network wide.
 
 == Screenshots ==
 
@@ -129,11 +137,11 @@ This plugin no longer uses Stop Forum Spam. If you need that feature, please use
 
 = Does this work on MultiSite? =
 
-No, and it's not supported.  It won't even run. No, I have no plans to MultiSite this.
+Surprise! Yes! If you're using multisite, instead of pulling from the blacklist, you have a separate list off Network Admin -> Settings.
 
 = Does this work on BuddyPress? =
 
-Yes, yes it does.  But only single site.
+Yes. (I have not fully tested with Multisite and BuddyPress.)
 
 = Why doesn't this work AT ALL on my site!? =
 
