@@ -32,6 +32,12 @@ global $wp_version;
 $exit_msg_ver = 'Sorry, but this plugin is no longer supported on pre-3.0 WordPress installs.';
 if (version_compare($wp_version,"2.9","<")) { exit($exit_msg_ver); }
 
+// Quick BuddyPress Check
+if (defined('BP_PLUGIN_DIR'))
+	DEFINE('banhammer_buddypress',1);
+else
+	DEFINE('banhammer_buddypress',0);
+
 // Languages
 load_plugin_textdomain('banhammer', false, basename( dirname( __FILE__ ) ) . '/languages' );
 
@@ -61,7 +67,11 @@ function banhammer($user_login, $user_email, $errors) {
 }
 
 // And here's Multisite Crap
-add_filter('wpmu_validate_user_signup', 'banhammer_validation', 99);
+
+if( is_multisite() && ($banhammer_buddypress == 0) ) {
+    add_filter('wpmu_validate_user_signup', 'banhammer_validation', 99);
+}
+
 function banhammer_validation($result) {
 
     $banhammer_blacklist = get_site_option('banhammer_keys');
@@ -133,7 +143,11 @@ function banhammer_activate() {
 }
 
 // Hooks
-add_action('admin_menu', 'banhammer_optionsmenu');
+if( is_multisite() ) {
+    add_action('network_admin_menu', 'banhammer_admin_add_page');
+} else {
+    add_action('admin_menu', 'banhammer_optionsmenu');
+}
 add_action('register_post', 'banhammer', 10, 3);
 
 register_activation_hook( __FILE__, 'banhammer_activate' );
@@ -153,7 +167,7 @@ function banhammer_donate_link($links, $file) {
 // add the admin options page
 
 if( is_multisite() ) {
-    add_action('network_admin_menu', 'banhammer_admin_add_page');
+    
     function banhammer_admin_add_page() {
 	   global $ippy_banhammer_options_page;
 	   $ippy_banhammer_options_page = add_submenu_page('settings.php', __('Ban Hammer', 'banhammer'), __('Ban Hammer', 'banhammer'), 'manage_networks', 'banhammer', 'banhammer_options');

@@ -13,7 +13,7 @@ Prevent people from registering via your comment moderation blacklist.
 
 We've all had this problem.  A group of spammers from mail.ru are registering to your blog, but you want to keep registration open.  How do you kill the spammers without bothering your clientele?  While you could edit your `functions.php` and block the domain, once you get past a few bad eggs, you have to escalate.
 
-Ban Hammer does that for you, preventing unwanted users from registering.
+Ban Hammer does that for you by preventing unwanted users from registering.
 
 On a single install of WP, instead of using its own database table, Ban Hammer pulls from your list of blacklisted emails from the Comment Blacklist feature, native to WordPress.  Since emails never equal IP addresses, it simply skips over and ignores them. On a network instance, there's a network wide setting for banned emails and domains. This means you only have <em>one</em> place to update and maintain your blacklist.  When a blacklisted user attempts to register, they get a customizable message that they cannot register.
 
