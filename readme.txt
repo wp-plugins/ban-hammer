@@ -2,7 +2,7 @@
 Contributors: Ipstenu
 Tags: email, ban, registration, buddypress
 Requires at least: 3.0
-Tested up to: 3.4
+Tested up to: 3.5
 Stable tag: 2.0
 Donate Link: https://www.wepay.com/donations/halfelf-wp
 License: GPLv2
@@ -31,6 +31,7 @@ Many thanks are due to WP-Deadbolt, for making me think about SQL and TTC for St
 = 2.1 =
 * 26 August, 2012 by Ipstenu
 * The return of Multisite
+* BuddyPress improvements
 
 = 2.0 =
 * 30 May, 2012 by Ipstenu
@@ -111,7 +112,7 @@ Fixes problem with enabling NOT working at all. *sigh*
 After installation, go to **Tools > Ban Hammer** to customize the error message (and banned emails, but it's the same list from your comment moderation so...).
 
 <strong>Multisite</strong?
-After installation, go to **Network Admain > Settings > Ban Hammer** to customize the error message and banned email list. This will ban users network wide.
+After installation, go to **Network Admin > Settings > Ban Hammer** to customize the error message and banned email list. This will ban users network wide.
 
 == Screenshots ==
 
@@ -141,7 +142,7 @@ Surprise! Yes! If you're using multisite, instead of pulling from the blacklist,
 
 = Does this work on BuddyPress? =
 
-Yes. (I have not fully tested with Multisite and BuddyPress.)
+Yes. Caveat: I have not fully tested with Multisite and BuddyPress, so I want to warn you that it doesn't always give the pretty error message. It does ban hammer them, though, so ... yay?
 
 = Why doesn't this work AT ALL on my site!? =
 
