@@ -2,7 +2,7 @@
 Contributors: Ipstenu
 Tags: email, ban, registration, buddypress, wpmu, multisite
 Requires at least: 3.4
-Tested up to: 3.5
+Tested up to: 3.6
 Stable tag: 2.3
 Donate Link: https://www.wepay.com/donations/halfelf-wp
 License: GPLv2
@@ -117,7 +117,7 @@ Fixes problem with enabling NOT working at all. *sigh*
 <strong>Single Install</strong>
 After installation, go to **Tools > Ban Hammer** to customize the error message (and banned emails, but it's the same list from your comment moderation so...).
 
-<strong>Multisite</strong?
+<strong>Multisite</strong>
 After installation, go to **Network Admin > Settings > Ban Hammer** to customize the error message and banned email list. This will ban users network wide.
 
 == Screenshots ==
