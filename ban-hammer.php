@@ -7,6 +7,8 @@ Version: 2.3
 Author: Mika Epstein
 Author URI: http://www.ipstenu.org/
 Network: true
+Text Domain: ban-hammer
+Domain Path: /languages
 
 Copyright 2009-13 Mika Epstein (email: ipstenu@ipstenu.org)
 
@@ -39,8 +41,8 @@ else
 	DEFINE('banhammer_buddypress',0);
 
 // Languages
-if ( !defined('banhammer')) {define('banhammer','banhammer');} // Translation
-load_plugin_textdomain('banhammer', false, basename( dirname( __FILE__ ) ) . '/languages', 'languages' );
+if ( !defined('ban-hammer')) {define('ban-hammer','ban-hammer');} // Translation
+load_plugin_textdomain('ban-hammer', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 // Here's the basic plugin for WordPress SANS BuddyPress
 function banhammer($user_login, $user_email, $errors) {
@@ -161,6 +163,15 @@ function banhammer_donate_link($links, $file) {
                 $links[] = $donate_link;
         }
         return $links;
+}
+
+// add settings to manage plugin page
+$plugin = plugin_basename(__FILE__);
+add_filter("plugin_action_links_$plugin", 'banhammer_settings_link' );
+function banhammer_settings_link($links) { 
+    $settings_link = '<a href="options-discussion.php">Settings</a>'; 
+    array_unshift($links, $settings_link); 
+    return $links; 
 }
 
 // Options Pages
